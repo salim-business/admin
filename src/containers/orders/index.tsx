@@ -12,7 +12,7 @@ import { emitRootKeyChanged } from '../../redux/actions/GlobalActions'
 import ApiComponent from '../global/ApiComponent'
 import CenteredSpinner from '../global/CenteredSpinner'
 import ErrorRetry from '../global/ErrorRetry'
-import ConfirmModal from './confirmModal'
+
 import socket from '../../socket/socket'
 // import User from './add'
 // change colomn name to suit the orders

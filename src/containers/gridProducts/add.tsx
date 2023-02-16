@@ -53,7 +53,7 @@ class AddUser extends ApiComponent<
                 }),
             })
                 .then(() => {
-                    alert('Item has been added')
+                    // alert('Item has been added')
                     // message.success(
                     //     `Driver ${
                     //         this.props.data.id ? 'updated' : 'added'
@@ -236,11 +236,9 @@ class AddUser extends ApiComponent<
                                             }
                                         >
                                             {[
-                                                'Bags',
-                                                'Jackets',
-                                                'Trousers',
-                                                'T-shirts',
-                                                'Accesories',
+                                                'Supplements',
+                                                'Hair',
+                                               
                                             ].map((variant, index) => (
                                                 <Select.Option
                                                     value={variant}

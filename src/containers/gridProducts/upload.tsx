@@ -4,9 +4,10 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { emitRootKeyChanged } from '../../redux/actions/GlobalActions'
 import StorageHelper from '../../utils/StorageHelper'
+import ApiComponent from '../global/ApiComponent'
 let authToken = StorageHelper.getAuthKeyFromStorage() || ''
 
-class UploadAvatar extends Component<any, any> {
+class UploadAvatar extends ApiComponent<any, any> {
     state = {
         loading: false,
         imageUrl: '',

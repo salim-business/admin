@@ -22,7 +22,7 @@ import ApiComponent from './global/ApiComponent'
 import ClickableLink from './global/ClickableLink'
 import DarkModeSwitch from './global/DarkModeSwitch'
 import gridProducts from './gridProducts'
-import inventory from './inventory'
+// import inventory from './inventory'
 import LoggedInCatchAll from './LoggedInCatchAll'
 import Orders from './orders'
 import Places from './places'
@@ -378,10 +378,10 @@ class PageRoot extends ApiComponent<
                                 <Route path="/places" component={Places} />
                                 <Route path="/banners" component={Banners} />
                                 <Route path="/settings/" component={Settings} />
-                                <Route
+                                {/* <Route
                                     path="/inventory/"
                                     component={inventory}
-                                />
+                                /> */}
                                 <Route path="/" component={LoggedInCatchAll} />
                             </Switch>
                         </div>
