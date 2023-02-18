@@ -219,7 +219,7 @@ class AddUser extends ApiComponent<
                                                 this.setData('category', value)
                                             }
                                         >
-                                            {['MEN', 'WOMEN'].map(
+                                            {['MEN', 'WOMEN', "BOTH"].map(
                                                 (catergory, index) => (
                                                     <Select.Option
                                                         value={catergory}
@@ -247,11 +247,8 @@ class AddUser extends ApiComponent<
                                             }
                                         >
                                             {[
-                                                'Bags',
-                                                'Jackets',
-                                                'Trousers',
-                                                'T-shirts',
-                                                'Accesories',
+                                              "Supplements",
+                                              "Hair"
                                             ].map((variant, index) => (
                                                 <Select.Option
                                                     value={variant}
@@ -305,7 +302,7 @@ class AddUser extends ApiComponent<
                                 </Col>
                                 <Col className="gutter-row" span={12}>
                                     <Form.Item
-                                        label="Description"
+                                        label="DESCRIPTION"
                                         required={!this.props.data}
                                     >
                                         <Input.TextArea
@@ -324,7 +321,7 @@ class AddUser extends ApiComponent<
                                 </Col>
                                 <Col className="gutter-row" span={12}>
                                     <Form.Item
-                                        label="Quantity"
+                                        label="QUANTITY"
                                         required={!this.props.data}
                                     >
                                         <Input
