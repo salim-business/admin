@@ -1,4 +1,4 @@
-import { DeleteOutlined, FileAddOutlined } from '@ant-design/icons'
+import { DeleteOutlined, FileAddOutlined, EditOutlined } from '@ant-design/icons'
 import { Button, Card, Col, Input, Popconfirm, Row, Table } from 'antd'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -30,7 +30,7 @@ class UsersTable extends ApiComponent<
 
     onSearchUser(input: any, option: any) {
         let regEx = new RegExp(input, 'ig')
-        return regEx.test(option.username)
+        return regEx.test(option.name)
     }
 
     reFetchData() {
@@ -40,7 +40,7 @@ class UsersTable extends ApiComponent<
                 // query: { role: 'banner' },
             })
                 .then(({ items }: any) => {
-                    console.log(items, 'products')
+                    // console.log(items, 'products')
                     this.setState({ isLoading: false, apiData: items })
                 })
                 .catch(() => this.setState({ isLoading: false }))
@@ -58,9 +58,9 @@ class UsersTable extends ApiComponent<
             return <ErrorRetry reloadCallBack={this.reFetchData.bind(this)} />
         }
 
-        const dataToRender = this.state.apiData.filter((user: any) => {
+        const dataToRender = this.state.apiData.filter((item: any) => {
             if (!this.state.searchTerm) return true
-            return this.onSearchUser(this.state.searchTerm, user)
+            return this.onSearchUser(this.state.searchTerm, item)
         })
 
         const searchAppInput = (
@@ -153,6 +153,15 @@ class UsersTable extends ApiComponent<
                                     dataIndex: 'actions',
                                     render: (_, record) => (
                                         <span>
+                                              <AddProductModal data={record}>
+                            <Button
+                                type="primary"
+                                // style={{ marginTop: '15px' }}
+                            >
+                                <EditOutlined />
+                            
+                            </Button>
+                        </AddProductModal>
                                             <Popconfirm
                                                 title="Sure to delete?"
                                                 onConfirm={() => {

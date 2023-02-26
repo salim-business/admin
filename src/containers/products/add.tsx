@@ -1,5 +1,5 @@
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
-import { Col, Form, Input, Modal, Row, Select, Upload } from 'antd'
+import { Col, Form, Input, Modal, Row, Select, Upload,message } from 'antd'
 import React, { ReactElement } from 'react'
 import { connect } from 'react-redux'
 import xtend from 'xtend'
@@ -42,9 +42,10 @@ class AddUser extends ApiComponent<
         })
     }
 
+
     add() {
         this.setState({ isLoading: true }, () => {
-            this[this.state.data.id ? 'updatePathData' : 'postPathData']({
+            this[this.state.data._id ? 'updatePathData' : 'postPathData']({
                 path: '/products',
                 data: xtend(this.state.data, {
                     imgIds: this.state.imgIds,
@@ -53,12 +54,12 @@ class AddUser extends ApiComponent<
                 }),
             })
                 .then(() => {
-                    alert('Item has been added')
-                    // message.success(
-                    //     `Driver ${
-                    //         this.props.data.id ? 'updated' : 'added'
-                    //     } sucessfully`
-                    // )
+                    // alert('Item has been added')
+                    message.success(
+                        `Product ${
+                            this.props.data.id ? 'updated' : 'added'
+                        } sucessfully`
+                    )
                     this.props.emitRootKeyChanged()
                     this.setState({
                         isModalVisible: false,
@@ -159,6 +160,9 @@ class AddUser extends ApiComponent<
                 <div style={{ marginTop: 8 }}>Upload</div>
             </div>
         )
+
+    console.log(this.state, 'state')
+
         return (
             <>
                 <Modal
@@ -218,12 +222,14 @@ class AddUser extends ApiComponent<
                                             onChange={(value: any) =>
                                                 this.setData('category', value)
                                             }
+                                            defaultValue={this.state.data.category}
                                         >
                                             {['MEN', 'WOMEN', "BOTH"].map(
                                                 (catergory, index) => (
                                                     <Select.Option
                                                         value={catergory}
                                                         key={index}
+                                                        
                                                     >
                                                         {catergory}
                                                     </Select.Option>
@@ -245,6 +251,7 @@ class AddUser extends ApiComponent<
                                             onChange={(value: any) =>
                                                 this.setData('variant', value)
                                             }
+                                            defaultValue={this.state.data.variant}
                                         >
                                             {[
                                               "Supplements",

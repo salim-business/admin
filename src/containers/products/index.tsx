@@ -1,4 +1,4 @@
-import { DeleteOutlined, FileAddOutlined } from '@ant-design/icons'
+import { DeleteOutlined, FileAddOutlined, EditOutlined } from '@ant-design/icons'
 import { Button, Card, Col, Input, Popconfirm, Row, Table } from 'antd'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -151,6 +151,14 @@ class UsersTable extends ApiComponent<
                                     dataIndex: 'actions',
                                     render: (_, record) => (
                                         <span>
+                                            <AddProductModal data={record}>
+                                                <Button
+                                                    shape="circle"
+                                                    type="primary"
+                                                >
+                                                    <EditOutlined />
+                                                </Button>
+                                            </AddProductModal>
                                             <Popconfirm
                                                 title="Sure to delete?"
                                                 onConfirm={() => {
