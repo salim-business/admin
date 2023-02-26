@@ -3,12 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "dependencies": {
-        "serve": "^13.0.2",
-        "vite": "^2.5.1",
-        "vite-aliases": "^0.8.6",
-        "vite-plugin-inspect": "^0.2.2",
-        "vite-plugin-svgr": "^0.3.0",
-        "vite-react-jsx": "^1.1.2"
+        "serve": "^13.0.2"
     },
     "scripts": {
         "s": "vite",
