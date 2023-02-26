@@ -143,6 +143,8 @@ class UsersTable extends ApiComponent<
                                 {
                                     title: 'DESCRIPTION',
                                     dataIndex: 'description',
+                                    render: (content: String) =>
+                                        content.substring(0, 75).concat('...'),
                                 },
                                 // {
                                 //     title: 'VEHICLE',
@@ -153,15 +155,14 @@ class UsersTable extends ApiComponent<
                                     dataIndex: 'actions',
                                     render: (_, record) => (
                                         <span>
-                                              <AddProductModal data={record}>
-                            <Button
-                                type="primary"
-                                // style={{ marginTop: '15px' }}
-                            >
-                                <EditOutlined />
-                            
-                            </Button>
-                        </AddProductModal>
+                                            <AddProductModal data={record}>
+                                                <Button
+                                                    type="primary"
+                                                    // style={{ marginTop: '15px' }}
+                                                >
+                                                    <EditOutlined />
+                                                </Button>
+                                            </AddProductModal>
                                             <Popconfirm
                                                 title="Sure to delete?"
                                                 onConfirm={() => {

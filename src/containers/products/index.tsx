@@ -144,6 +144,8 @@ class UsersTable extends ApiComponent<
                                 {
                                     title: 'DESCRIPTION',
                                     dataIndex: 'description',
+                                    render: (content: String) =>
+                                        content.substring(0, 75).concat('...'),
                                 },
 
                                 {
