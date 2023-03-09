@@ -222,14 +222,15 @@ class AddUser extends ApiComponent<
                                             onChange={(value: any) =>
                                                 this.setData('category', value)
                                             }
-                                            defaultValue={this.state.data.category}
+                                            defaultValue={
+                                                this.state.data.category
+                                            }
                                         >
-                                            {['MEN', 'WOMEN', "BOTH"].map(
+                                            {['SUPPLEMENTS', 'HAIR'].map(
                                                 (catergory, index) => (
                                                     <Select.Option
                                                         value={catergory}
                                                         key={index}
-                                                        
                                                     >
                                                         {catergory}
                                                     </Select.Option>
@@ -251,19 +252,20 @@ class AddUser extends ApiComponent<
                                             onChange={(value: any) =>
                                                 this.setData('variant', value)
                                             }
-                                            defaultValue={this.state.data.variant}
+                                            defaultValue={
+                                                this.state.data.variant
+                                            }
                                         >
-                                            {[
-                                              "Supplements",
-                                              "Hair"
-                                            ].map((variant, index) => (
-                                                <Select.Option
-                                                    value={variant}
-                                                    key={index}
-                                                >
-                                                    {variant}
-                                                </Select.Option>
-                                            ))}
+                                            {['MEN', 'WOMEN', 'BOTH'].map(
+                                                (variant, index) => (
+                                                    <Select.Option
+                                                        value={variant}
+                                                        key={index}
+                                                    >
+                                                        {variant}
+                                                    </Select.Option>
+                                                )
+                                            )}
                                         </Select>
                                     </Form.Item>
                                 </Col>
