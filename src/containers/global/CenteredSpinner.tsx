@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 
 export default class CenteredSpinner extends Component {
     render() {
-        const antIcon = <LoadingOutlined style={{ fontSize: 32 }} spin />
+        const antIcon = <LoadingOutlined rev style={{ fontSize: 32 }} spin />
 
         return (
             <div

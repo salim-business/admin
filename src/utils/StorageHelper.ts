@@ -17,7 +17,6 @@ const ADMIN_STATE = 'ADMIN_ADMIN'
 class StorageHelper {
     getAuthKeyFromStorage() {
         const localStorageAuth = localStorage.getItem(AUTH_KEY)
-
         return localStorageAuth
             ? localStorageAuth
             : sessionStorage.getItem(AUTH_KEY) || ''

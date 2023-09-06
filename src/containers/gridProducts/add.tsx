@@ -53,11 +53,11 @@ class AddUser extends ApiComponent<
                 }),
             })
                 .then(() => {
-                   message.success(
-                       `Product ${
-                           this.props.data.id ? 'updated' : 'added'
-                       } sucessfully`
-                   )
+                //    message.success(
+                //        `Product ${
+                //            this.props.data.id ? 'updated' : 'added'
+                //        } sucessfully`
+                //    )
                     this.props.emitRootKeyChanged()
                     this.setState({
                         isModalVisible: false,
@@ -142,7 +142,7 @@ class AddUser extends ApiComponent<
         const { loading, imageUrl } = this.state
         const uploadButton = (
             <div>
-                {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                {loading ? <LoadingOutlined rev/> : <PlusOutlined rev/>}
                 <div style={{ marginTop: 8 }}>Upload</div>
             </div>
         )

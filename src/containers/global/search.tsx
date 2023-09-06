@@ -89,7 +89,7 @@ export default class SearchSelect extends ApiComponent<
                 onSearch={this.onSearch.bind(this)}
                 placeholder={
                     <span>
-                        <SearchOutlined /> {` `}
+                        <SearchOutlined rev/> {` `}
                         Please type to search
                     </span>
                 }

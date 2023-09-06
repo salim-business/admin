@@ -90,7 +90,7 @@ class UsersTable extends ApiComponent<
                         title={
                             <React.Fragment>
                                 <span>
-                                    <CarOutlined />
+                                    <CarOutlined rev/>
                                     {`  `}
                                     DRIVERS
                                 </span>
@@ -149,7 +149,7 @@ class UsersTable extends ApiComponent<
                                                     shape="circle"
                                                     type="primary"
                                                 >
-                                                    <EditOutlined />
+                                                    <EditOutlined rev/>
                                                 </Button>
                                             </Driver>
                                             <Popconfirm
@@ -169,7 +169,7 @@ class UsersTable extends ApiComponent<
                                                     style={{
                                                         marginLeft: '10px',
                                                     }}
-                                                    icon={<DeleteOutlined />}
+                                                    icon={<DeleteOutlined rev/>}
                                                 />
                                             </Popconfirm>
                                         </span>
@@ -187,7 +187,7 @@ class UsersTable extends ApiComponent<
                                 type="primary"
                                 style={{ marginTop: '15px' }}
                             >
-                                <UsergroupAddOutlined />
+                                <UsergroupAddOutlined rev/>
                                 ADD
                             </Button>
                         </Driver>

@@ -11,8 +11,8 @@ export default class DarkModeSwitch extends Component<{}, any> {
     render() {
         return (
             <Switch
-                checkedChildren={<BulbOutlined />}
-                unCheckedChildren={<BulbFilled />}
+                checkedChildren={<BulbOutlined rev/>}
+                unCheckedChildren={<BulbFilled rev/>}
                 checked={this.state.isChecked}
                 onChange={(checked) => {
                     StorageHelper.setDarkModeInLocalStorage(checked)

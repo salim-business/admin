@@ -13,7 +13,7 @@ import ApiComponent from '../global/ApiComponent'
 import CenteredSpinner from '../global/CenteredSpinner'
 import ErrorRetry from '../global/ErrorRetry'
 
-import socket from '../../socket/socket'
+// import socket from '../../socket/socket'
 // import User from './add'
 // change colomn name to suit the orders
 
@@ -83,18 +83,6 @@ class UsersTable extends ApiComponent<
 
     componentDidMount() {
         this.reFetchData(true)
-        // setInterval(() => {
-        //     this.reFetchData(false)
-        // }, 5000)
-        const conn = socket.connect()
-        conn.on('conn', () => {
-            console.log('socket connected')
-        })
-        conn.on('newOrder', () => {
-            this.reFetchData(true)
-
-            console.log('newOrder')
-        })
     }
 
     render() {
@@ -134,7 +122,7 @@ class UsersTable extends ApiComponent<
                             title={
                                 <React.Fragment>
                                     <span>
-                                        <ShoppingCartOutlined />
+                                        <ShoppingCartOutlined rev={undefined} />
                                         {`  `} ORDERS
                                     </span>
                                     <br />
@@ -264,7 +252,7 @@ class UsersTable extends ApiComponent<
                                                                         '10px',
                                                                 }}
                                                                 icon={
-                                                                    <DeleteOutlined />
+                                                                    <DeleteOutlined rev/>
                                                                 }
                                                             />
                                                         </Popconfirm>
@@ -307,7 +295,7 @@ class UsersTable extends ApiComponent<
                                                                         '10px',
                                                                 }}
                                                                 icon={
-                                                                    <CheckOutlined />
+                                                                    <CheckOutlined rev/>
                                                                 }
                                                             />
                                                         </Popconfirm>
@@ -413,7 +401,7 @@ class UsersTable extends ApiComponent<
                                                                         '10px',
                                                                 }}
                                                                 icon={
-                                                                    <DeleteOutlined />
+                                                                    <DeleteOutlined rev/>
                                                                 }
                                                             />
                                                         </Popconfirm>
@@ -456,7 +444,7 @@ class UsersTable extends ApiComponent<
                                                                         '10px',
                                                                 }}
                                                                 icon={
-                                                                    <CheckOutlined />
+                                                                    <CheckOutlined rev/>
                                                                 }
                                                             />
                                                         </Popconfirm>

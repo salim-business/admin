@@ -1,10 +1,8 @@
-import { Card, Col, Row, Statistic, Button } from 'antd'
-import DollarTwoTone from '@ant-design/icons'
+import { Card, Col, Row, Statistic } from 'antd'
 import ReactECharts from 'echarts-for-react'
-import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import ApiComponent from './global/ApiComponent'
-import socket from '../socket/socket'
+// import socket from '../socket/socket'
 export default class Dashboard extends ApiComponent<
     RouteComponentProps<any>,
     any
@@ -83,15 +81,6 @@ export default class Dashboard extends ApiComponent<
     }
     componentDidMount() {
         this.fetchStats()
-        // this.fetchCollections()
-
-        const conn = socket.connect()
-        conn.on('conn', () => {
-            console.log('socket connected')
-        })
-        conn.on('newOrder', () => {
-            this.fetchStats()
-        })
     }
 
     render() {

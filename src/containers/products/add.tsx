@@ -1,5 +1,5 @@
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
-import { Col, Form, Input, Modal, Row, Select, Upload,message } from 'antd'
+import { Col, Form, Input, Modal, Row, Select, Upload, message } from 'antd'
 import React, { ReactElement } from 'react'
 import { connect } from 'react-redux'
 import xtend from 'xtend'
@@ -55,11 +55,11 @@ class AddUser extends ApiComponent<
             })
                 .then(() => {
                     // alert('Item has been added')
-                    message.success(
-                        `Product ${
-                            this.props.data.id ? 'updated' : 'added'
-                        } sucessfully`
-                    )
+                    // message.success(
+                    //     `Product ${
+                    //         this.props.data.id ? 'updated' : 'added'
+                    //     } sucessfully`
+                    // )
                     this.props.emitRootKeyChanged()
                     this.setState({
                         isModalVisible: false,
@@ -156,7 +156,7 @@ class AddUser extends ApiComponent<
         const { loading, imageUrl } = this.state
         const uploadButton = (
             <div>
-                {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                {loading ? <LoadingOutlined rev/> : <PlusOutlined rev/>}
                 <div style={{ marginTop: 8 }}>Upload</div>
             </div>
         )

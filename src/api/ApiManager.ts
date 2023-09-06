@@ -25,13 +25,13 @@ export default class ApiManager {
     }
 
     public getApiBaseUrl() {
-        const URL = (process.env.API_URL || '') + '/api/v1'
+        const URL = (process.env.REACT_APP_API_URL || '') + '/api/v1'
         // Logger.dev(`API URL: ${URL}`)
         return URL
     }
 
     public getApiUrl() {
-        const URL = (process.env.API_URL || '') + '/api/v1'
+        const URL = (process.env.REACT_APP_API_URL || '') + '/api/v1'
         // Logger.dev(`API URL: ${URL}`)
         return URL
     }

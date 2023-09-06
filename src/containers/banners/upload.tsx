@@ -30,7 +30,7 @@ class UploadAvatar extends ApiComponent<any, any> {
         const { loading, imageUrl } = this.state
         const uploadButton = (
             <div>
-                {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                {loading ? <LoadingOutlined rev /> : <PlusOutlined rev />}
                 <div style={{ marginTop: 8 }}>Upload</div>
             </div>
         )
@@ -51,17 +51,7 @@ class UploadAvatar extends ApiComponent<any, any> {
 
                     // data={{ role: 'banner' }}
                 >
-                    {
-                        //     imageUrl ? (
-                        //     <img
-                        //         src={imageUrl}
-                        //         alt="avatar"
-                        //         style={{ width: '100%' }}
-                        //     />
-                        // ) : (
-                        uploadButton
-                        // )
-                    }
+                    {uploadButton}
                 </Upload>
             </>
         )

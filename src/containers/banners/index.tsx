@@ -88,7 +88,7 @@ class UsersTable extends ApiComponent<
                         title={
                             <React.Fragment>
                                 <span>
-                                    <FileAddOutlined />
+                                    <FileAddOutlined rev />
                                     {`  `}
                                     BANNERS
                                 </span>
@@ -122,30 +122,6 @@ class UsersTable extends ApiComponent<
                                         )
                                     },
                                 },
-
-                                // {
-                                //     title: 'USERNAME',
-                                //     dataIndex: 'username',
-                                //     sorter: (a: any, b: any) => {
-                                //         return a.username.localeCompare(
-                                //             b.username
-                                //         )
-                                //     },
-                                //     defaultSortOrder: 'descend',
-                                //     sortDirections: ['descend', 'ascend'],
-                                // },
-                                // {
-                                //     title: 'PHONE',
-                                //     dataIndex: 'phone',
-                                // },
-                                // {
-                                //     title: 'ADDRESS',
-                                //     dataIndex: 'address',
-                                // },
-                                // {
-                                //     title: 'VEHICLE',
-                                //     dataIndex: 'vehicle',
-                                // },
                                 {
                                     title: 'ACTIONS',
                                     dataIndex: 'actions',
@@ -168,17 +144,16 @@ class UsersTable extends ApiComponent<
                                                     style={{
                                                         marginLeft: '10px',
                                                     }}
-                                                    icon={<DeleteOutlined />}
+                                                    icon={
+                                                        <DeleteOutlined rev />
+                                                    }
                                                 />
                                             </Popconfirm>
                                         </span>
                                     ),
                                 },
                             ]}
-                            dataSource={
-                                // [{ username: 'Geo', roles: [], id: 'eft' }]
-                                dataToRender
-                            }
+                            dataSource={dataToRender}
                             size="small"
                         />
                         <Driver>
@@ -186,7 +161,7 @@ class UsersTable extends ApiComponent<
                                 type="primary"
                                 style={{ marginTop: '15px' }}
                             >
-                                <FileAddOutlined />
+                                <FileAddOutlined rev />
                                 ADD
                             </Button>
                         </Driver>

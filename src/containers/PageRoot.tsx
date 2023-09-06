@@ -127,12 +127,12 @@ class PageRoot extends ApiComponent<
                       {
                           key: 'dashboard',
                           name: 'Dashboard',
-                          icon: <DashboardOutlined />,
+                          icon: <DashboardOutlined rev/>,
                       },
                       {
                           key: 'orders',
                           name: 'ORDERS',
-                          icon: <ShoppingCartOutlined />,
+                          icon: <ShoppingCartOutlined rev/>,
                       },
                       //   {
                       //       key: 'users',
@@ -142,22 +142,22 @@ class PageRoot extends ApiComponent<
                       {
                           key: 'products',
                           name: 'PRODUCTS',
-                          icon: <RestOutlined />,
+                          icon: <RestOutlined rev/>,
                       },
                       {
                           key: 'gridProducts',
                           name: 'Grid PRODUCTS',
-                          icon: <RestOutlined />,
+                          icon: <RestOutlined rev/>,
                       },
                       {
                           key: 'staff',
                           name: 'STAFF',
-                          icon: <ContactsOutlined />,
+                          icon: <ContactsOutlined rev/>,
                       },
                       {
                           key: 'banners',
                           name: 'Banners',
-                          icon: <FileAddOutlined />,
+                          icon: <FileAddOutlined rev/>,
                       },
                       //   {
                       //       key: 'inventory',
@@ -169,12 +169,12 @@ class PageRoot extends ApiComponent<
                       {
                           key: 'orders',
                           name: 'ORDERS',
-                          icon: <ShoppingCartOutlined />,
+                          icon: <ShoppingCartOutlined rev/>,
                       },
                       {
                           key: 'items',
                           name: 'PRODUCTS',
-                          icon: <RestOutlined />,
+                          icon: <RestOutlined rev/>,
                       },
                       //   {
                       //       key: 'places',
@@ -184,13 +184,13 @@ class PageRoot extends ApiComponent<
                       {
                           key: 'banners',
                           name: 'Banners',
-                          icon: <FileAddOutlined />,
+                          icon: <FileAddOutlined rev/>,
                       },
                   ]),
             {
                 key: 'settings',
                 name: 'SETTINGS',
-                icon: <SettingOutlined />,
+                icon: <SettingOutlined rev/>,
             },
         ]
 
@@ -208,7 +208,7 @@ class PageRoot extends ApiComponent<
                                 <Col span={4}>
                                     <Button
                                         ghost
-                                        icon={<BarsOutlined />}
+                                        icon={<BarsOutlined rev/>}
                                         onClick={this.toggleSider}
                                     />
                                 </Col>
@@ -218,7 +218,7 @@ class PageRoot extends ApiComponent<
                                     <h3 style={{ color: '#fff' }}>
                                         <img
                                             alt="logo"
-                                            src={`${process.env.API_URL}/igc-fashion-logo.png`}
+                                            src={`${process.env.REACT_APP_API_URL}/igc-fashion-logo.png`}
                                             style={{
                                                 height: 35,
                                                 width: 35,
@@ -253,7 +253,7 @@ class PageRoot extends ApiComponent<
                                                     )}
                                                 >
                                                     LOGOUT {` `}
-                                                    <LogoutOutlined />
+                                                    <LogoutOutlined rev/>
                                                 </ClickableLink>
                                             </span>
                                         </span>
@@ -336,7 +336,7 @@ class PageRoot extends ApiComponent<
                                                 this
                                             )}
                                         >
-                                            <LogoutOutlined />
+                                            <LogoutOutlined rev/>
                                             LOGOUT
                                         </ClickableLink>
                                     </div>

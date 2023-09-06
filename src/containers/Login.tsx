@@ -133,7 +133,7 @@ class NormalLoginForm extends React.Component<
                     style={{ marginBottom: 20 }}
                     size="large"
                     prefix={
-                        <UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />
+                        <UserOutlined rev style={{ color: 'rgba(0,0,0,.25)' }} />
                     }
                     onChange={(e) => {
                         self.setState({ username: `${e.target.value}` })
@@ -148,7 +148,7 @@ class NormalLoginForm extends React.Component<
                         }
                     }}
                     prefix={
-                        <LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />
+                        <LockOutlined rev style={{ color: 'rgba(0,0,0,.25)' }} />
                     }
                     onChange={(e) => {
                         self.setState({ passwordEntered: `${e.target.value}` })

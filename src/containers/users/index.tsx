@@ -86,7 +86,7 @@ class UsersTable extends ApiComponent<
                         title={
                             <React.Fragment>
                                 <span>
-                                    <TeamOutlined />
+                                    <TeamOutlined rev/>
                                     {`  `} USERS
                                 </span>
                                 <br />
@@ -142,7 +142,7 @@ class UsersTable extends ApiComponent<
                                                     shape="circle"
                                                     type="primary"
                                                 >
-                                                    <EditOutlined />
+                                                    <EditOutlined rev/>
                                                 </Button>
                                             </User>
                                             <Popconfirm
@@ -162,7 +162,7 @@ class UsersTable extends ApiComponent<
                                                     style={{
                                                         marginLeft: '10px',
                                                     }}
-                                                    icon={<DeleteOutlined />}
+                                                    icon={<DeleteOutlined rev/>}
                                                 />
                                             </Popconfirm>
                                         </span>

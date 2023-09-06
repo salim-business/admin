@@ -87,7 +87,7 @@ class UsersTable extends ApiComponent<
                         title={
                             <React.Fragment>
                                 <span>
-                                    <FileAddOutlined />
+                                    <FileAddOutlined rev/>
                                     {`  `}
                                     ITEMS
                                 </span>
@@ -160,7 +160,7 @@ class UsersTable extends ApiComponent<
                                                     type="primary"
                                                     // style={{ marginTop: '15px' }}
                                                 >
-                                                    <EditOutlined />
+                                                    <EditOutlined rev/>
                                                 </Button>
                                             </AddProductModal>
                                             <Popconfirm
@@ -184,7 +184,7 @@ class UsersTable extends ApiComponent<
                                                     style={{
                                                         marginLeft: '10px',
                                                     }}
-                                                    icon={<DeleteOutlined />}
+                                                    icon={<DeleteOutlined rev/>}
                                                 />
                                             </Popconfirm>
                                         </span>
@@ -202,7 +202,7 @@ class UsersTable extends ApiComponent<
                                 type="primary"
                                 style={{ marginTop: '15px' }}
                             >
-                                <FileAddOutlined />
+                                <FileAddOutlined rev/>
                                 ADD
                             </Button>
                         </AddProductModal>
@@ -212,6 +212,7 @@ class UsersTable extends ApiComponent<
         )
     }
 }
+
 
 function mapStateToProps(state: any) {
     return {
