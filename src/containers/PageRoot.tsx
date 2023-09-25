@@ -202,6 +202,7 @@ class PageRoot extends ApiComponent<
                         padding: `0 ${this.props.isMobile ? 15 : 50}px`,
                     }}
                 >
+                    
                     <div>
                         <Row>
                             {this.props.isMobile && (
