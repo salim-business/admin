@@ -225,7 +225,7 @@ class PageRoot extends ApiComponent<
                                                 marginRight: 10,
                                             }}
                                         />
-                                        IGC FASHION ADMIN PANEL
+                                       SUPPLEMENTS ADMIN PANEL
                                     </h3>
                                 </div>
                             </Col>
