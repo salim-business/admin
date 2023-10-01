@@ -29,7 +29,8 @@ class AddUser extends ApiComponent<
             imgIds: [],
             streamIds: [],
             attachment: '',
-            // fileList: [],
+            fileList: [],
+            imageUrls: [],
             limit: false,
         }
     }
@@ -48,9 +49,8 @@ class AddUser extends ApiComponent<
             this[this.state.data._id ? 'updatePathData' : 'postPathData']({
                 path: '/products',
                 data: xtend(this.state.data, {
-                    imgIds: this.state.imgIds,
-                    attachment: this.state.attachment,
-                    streamIds: this.state.streamIds,
+                    images: this.state.fileList,
+                    imageUrls: this.state.imageUrls,
                 }),
             })
                 .then(() => {
@@ -78,78 +78,18 @@ class AddUser extends ApiComponent<
         // console.log(reader.readAsDataURL(img), 'url')
     }
 
-    handleChange = (info: any) => {
-        if (info.file.status === 'removed') {
-            if (info.fileList.length < 10) {
-                this.setState({
-                    limit: false,
-                })
-            }
-
-            this.deletePathData({
-                path: `/gfsUpload/${info.file.response.streamId}`,
+    handleChange = ({ file, fileList }: any) => {
+        console.log(this.state.imageUrls, file.response)
+        if (file.status == 'done') {
+            this.setState((state: any) => {
+                let imageUrls = [...state.imageUrls, file.response.url]
+                return {
+                    imageUrls,
+                }
             })
-
-            console.log(this.state.streamIds, 'stre')
-
-            this.setState({
-                streamIds: this.state.streamIds.filter(function (id: any) {
-                    return id !== info.file.response.streamId
-                }),
-            })
-
-            console.log(this.state.streamIds)
-
-            this.deletePathData({
-                path: `/attachment/${info.file.response.filename}`,
-            })
-
-            console.log(this.state.imgIds, 'img')
-
-            this.setState({
-                imgIds: this.state.imgIds.filter(function (id: any) {
-                    return id !== info.file.response.filename
-                }),
-            })
-
-            console.log(this.state.imgIds)
         }
 
-        if (info.file.status === 'uploading') {
-            this.setState({ loading: true })
-            return
-        }
-
-        if (info.file.status === 'done') {
-            console.log(info.file, 'done......................')
-            console.log(info)
-
-            this.setState({
-                imgIds: [...this.state.imgIds, info.file.response.filename],
-            })
-
-            this.setState({
-                streamIds: [
-                    ...this.state.streamIds,
-                    info.file.response.streamId,
-                ],
-            })
-
-            console.log(info.file.response.attachmentId._id)
-            this.setState({ attachment: info.file.response.attachmentId._id })
-
-            this.getBase64(info.file.originFileObj, (imageUrl: any) =>
-                this.setState({
-                    imageUrl,
-                    loading: false,
-                })
-            )
-            if (info.fileList.length >= 10) {
-                this.setState({
-                    limit: true,
-                })
-            }
-        }
+        this.setState({ fileList })
     }
 
     render() {
@@ -190,12 +130,12 @@ class AddUser extends ApiComponent<
                         <Form layout="vertical">
                             <Row>
                                 <Upload
-                                    name="banner"
+                                    name="image"
                                     listType="picture-card"
                                     className="avatar-uploader"
                                     showUploadList={true}
                                     // fileList={this.state.fileList}
-                                    action={`${this.apiManager.getApiUrl()}/gfsUpload`}
+                                    action={`${process.env.REACT_APP_API_URL}/api/v1/upload`}
                                     // beforeUpload={beforeUpload}
                                     onChange={this.handleChange}
                                     headers={{

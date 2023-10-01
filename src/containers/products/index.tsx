@@ -110,15 +110,13 @@ class UsersTable extends ApiComponent<
                             columns={[
                                 {
                                     title: 'ITEM',
-                                    dataIndex: 'imgIds',
+                                    dataIndex: 'imageUrls',
                                     key: 'id',
                                     // dataIndex: 'original_name',
-                                    render: (imgIds: any) => {
+                                    render: (imageUrls: any) => {
                                         return (
                                             <img
-                                                src={`${this.apiManager.getApiUrl()}/gfsUpload/preview/${
-                                                    imgIds[0]
-                                                }`}
+                                            src={imageUrls[0]}
                                                 width={100}
                                                 height={100}
                                             />
