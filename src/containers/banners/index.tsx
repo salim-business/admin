@@ -111,16 +111,24 @@ class UsersTable extends ApiComponent<
                             columns={[
                                 {
                                     title: 'Banner',
-                                    dataIndex: 'imgId',
-                                    render: (imgId: any) => {
+                                    dataIndex: 'imageUrl',
+                                    render: (imageUrl: any) => {
                                         return (
                                             <img
-                                                src={`${this.apiManager.getApiUrl()}/gfsUpload/preview/${imgId}`}
+                                                src={imageUrl}
                                                 width={100}
                                                 height={100}
                                             />
                                         )
                                     },
+                                },
+                                {
+                                    title: 'Big Title',
+                                    dataIndex: 'title',
+                                },
+                                {
+                                    title: 'h5',
+                                    dataIndex: 'h5',
                                 },
                                 {
                                     title: 'ACTIONS',
@@ -131,7 +139,7 @@ class UsersTable extends ApiComponent<
                                                 title="Sure to delete?"
                                                 onConfirm={() =>
                                                     this.deletePathData({
-                                                        path: `/banners/${record.imgId}`,
+                                                        path: `/banners/${record._id}`,
                                                     }).then(() =>
                                                         this.props.emitRootKeyChanged()
                                                     )
