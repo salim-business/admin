@@ -26,7 +26,7 @@ class AddUser extends ApiComponent<
             data: xtend(props.data, {}),
             loading: false,
             imageUrl: '',
-            imgIds: [],
+
             streamIds: [],
             attachment: '',
             fileList: [],
@@ -45,11 +45,12 @@ class AddUser extends ApiComponent<
 
 
     add() {
+        let imgIds = this.state.fileList.map((file: any) => file.name)
         this.setState({ isLoading: true }, () => {
             this[this.state.data._id ? 'updatePathData' : 'postPathData']({
                 path: '/products',
                 data: xtend(this.state.data, {
-                    images: this.state.fileList,
+                    imgIds,
                     imageUrls: this.state.imageUrls,
                 }),
             })
@@ -90,6 +91,8 @@ class AddUser extends ApiComponent<
         }
 
         this.setState({ fileList })
+
+        console.log(fileList.map((file: any) => file.name), 'fileList')
     }
 
     render() {
@@ -112,8 +115,7 @@ class AddUser extends ApiComponent<
                     onCancel={() => {
                         this.setState({
                             isModalVisible: false,
-                            imgIds: [],
-                            streamIds: [],
+                            fileList: []
                         })
                         this.setData('category', '')
                         this.setData('name', '')
